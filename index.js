@@ -17,7 +17,7 @@ app.get("/", async (req, res) => {
       UF: $(selectorUF).text() ?? [],
       dolar: $(selectorDolar).text().split(' ')[0] ?? [],
     };
-    res.json({ objetovalor });
+    res.json(objetovalor);
   } catch (error) {
     res.json({ error });
   }
