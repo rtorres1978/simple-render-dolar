@@ -1,9 +1,12 @@
 import express from "express";
 import axios from "axios";
 import * as cheerio from "cheerio";
+import cors from cors;
+
 const app = express();
 
-app.get("/", async (req, res) => {
+
+app.get("/", cors(), async (req, res) => {
   try {
     const { data } = await axios.get("https://www.bcentral.cl/inicio");
     const $ = cheerio.load(data);
